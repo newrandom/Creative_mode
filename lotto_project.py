@@ -35,6 +35,34 @@ def create_lot_num():       # entry > button > message
     # message widget에 넣기
     message['text']=lotto_num
 
+# ==== 추가 ==== #
+def get_lot_num_10():
+    print_nums_message['text'] = '최근 10번 중 가장 많이 나온 숫자는 \n\'{}\' 입니다.'.format(0)
+    ## 추가해야할 기능 : 로또 마지막에서 최근 10개까지 나온 숫자 가장 많은 수 6개 출력  (총 60개의 숫자)
+        # 1. 데이터 불러오기 > 2. 데이터 슬라이스 > 3. 번호별로 가장 많이 나온 수 대로 정렬 > 4. 출력
+                                                # 3-2. 확률이 같다면 동급으로 취급하여 출력 (예 : 1등 2, 2등 3,11, 4등 7 ...)
+    return print_nums_message['text']
+
+def get_lot_num_25():
+    print_nums_message['text'] = '최근 25번 중 가장 많이 나온 숫자는 \n\'{}\' 입니다.'.format(1)
+    return print_nums_message['text']
+
+def get_lot_num_50():
+    print_nums_message['text'] = '최근 50번 중 가장 많이 나온 숫자는 \n\'{}\' 입니다.'.format(2)
+    return print_nums_message['text']
+
+def get_lot_num_all():
+    print_nums_message['text'] = '전체 회차 중 가장 많이 나온 숫자는 \n\'{}\' 입니다.'.format(3)
+    return print_nums_message['text']
+
+def get_lot_num_a2b():
+    a = combobox_start.get();b = combobox_end.get()
+    print_nums_message['text'] = '{}회 부터 {}회차 까지 가장 많이 나온 숫자는 \n\'{}\' 입니다.'.format(a, b, 4)
+    search_button['text'] = '{}회부터 {}회까지 조회'.format(a,b)
+    return print_nums_message['text']
+
+
+
 # =========  상단  frame  ========= #
 
 # 탑레벨 위젯
@@ -67,44 +95,46 @@ message = Message(text='특정 숫자를 제외한 나머지 숫자가 무작위
 message.place(relx=0, y = 165, relwidth = 1, height = 50)
 # message.pack(fill=Y,expand=1)
 
+
 # ================== 하단 frame ===================== #
 
 # button - 최근 10회 가장 많이 나온 번호 조회
-top_10_button = Button(text='최근 TOP 10',background='lightyellow', command=None)
+top_10_button = Button(text='최근 TOP 10',background='lightyellow', command=get_lot_num_10)          ### 커맨드 추가
 top_10_button.place(relx=0.01, y=220, relwidth=0.2, height=50)
 
 # button - 최근 25회 번호 조회
-top_25_button = Button(text='최근 TOP 25', command=None)
+top_25_button = Button(text='최근 TOP 25', command=get_lot_num_25)      # 커맨드 추가
 top_25_button.place(relx=0.26, y = 220, relwidth=0.2, height=50)
 
 # button - 최근 50회 번호 조회
-top_50_button = Button(text='최근 TOP 50', command=None)
+top_50_button = Button(text='최근 TOP 50', command=get_lot_num_50)      # 커맨드 추가
 top_50_button.place(relx = 0.51, y = 220, relwidth=0.2, height=50)
 
 # button - 전체 번호 조회
-all_num_button = Button(text='전체 번호 조회', command=None)
+all_num_button = Button(text='전체 번호 조회', command=get_lot_num_all)     # 커맨드 추가
 all_num_button.place(relx=0.76, y = 220, relwidth=0.2, height=50)
 
 
 # message - 번호 조회 창
-print_nums_message = Message(text='🤔', background='white', foreground='black', width=145)
-print_nums_message.place(relx=0, y = 275, relwidth=1, height=50)
+print_nums_message = Message(text='최근 가장 많이 나온 숫자 (보너스 제외)', background='white', foreground='black', width=250)      # 넓이 수정 145  > 250
+print_nums_message.place(relx=0, y = 275, relwidth=1, height=60)
 
 # combobox_start - 조회 시작 칸
 combobox_start = Combobox(window, values=[i for i in range(1, 1001)])
-combobox_start.place(relx=0.01, y = 330, relwidth=0.2, height=25, )
+combobox_start.place(relx=0.01, y = 340, relwidth=0.2, height=25, )
 combobox_start.set('시작')
-a = combobox_start.get()
+# a = combobox_start.get()          # 삭제
 
 # combobox_end - 조회 종료 칸
 combobox_end = Combobox(window, values=[i for i in range(1, 1001)])
-combobox_end.place(relx=0.01, y = 360, relwidth=0.2, height=25, )
+combobox_end.place(relx=0.01, y = 370, relwidth=0.2, height=25, )
 combobox_end.set('종료')
-b = combobox_end.get()
+# b = combobox_end.get()            # 삭제
+
 
 # search_button - combobox 조회버튼
-search_button = Button(text='{} 부터 {} 까지 조회'.format(a,b), command=None)
-search_button.place(relx=0.25, y = 330, relwidth=0.3, height=55, )
+search_button = Button(text='범위 조회', command=get_lot_num_a2b)        # 커맨드 추가
+search_button.place(relx=0.25, y = 340, relwidth=0.3, height=55, )
 
 
 # window.Looping
