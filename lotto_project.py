@@ -1,6 +1,4 @@
 # 로또 번호 생성기
-from ast import Global
-from optparse import Values
 from tkinter import *
 from random import sample
 from tkinter.ttk import Combobox
