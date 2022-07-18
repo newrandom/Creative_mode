@@ -14,7 +14,6 @@
 ## `추후 예정상황`
 > - SQL의 데이터 불러온 후, tkinter 설정에 바로 연동
 > - ~~selenium은 webdriver (Chromedriver)의 활용이 필요한데, 다른 방법으로 스크래핑 할 수 있는지 찾아보기 (ex. BeautifulSoup)~~ \
-> 웹드라이버의 기능을 따라갈 수 
 > - 실행파일로 만들기
 > - tkinter 내의 함수, 알고리즘 정리하기
 
