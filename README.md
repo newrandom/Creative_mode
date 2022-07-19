@@ -8,9 +8,9 @@
 
 ## `현재 진행상황`
 > - tkinter 모듈을 활용
-> - ~~ selenium 의 webdriver를 이용하여 동행복권(`https://dhlottery.co.kr/gameResult.do?method=byWin`)의 당첨정보 스크래핑 (완료) ~~
-> - ~~ pandas를 이용하여 데이터 편집, local에 csv로 저장 (추후 SQL에 바로 업로드 하는 과정으로 변경할 것) (완료) ~~
-> - ~~ NAS의 SQL에 데이터 업로드 (완료) ~~
+> - ~~selenium 의 webdriver를 이용하여 동행복권(`https://dhlottery.co.kr/gameResult.do?method=byWin`)의 당첨정보 스크래핑 (완료)~~
+> - ~~pandas를 이용하여 데이터 편집, local에 csv로 저장 (추후 SQL에 바로 업로드 하는 과정으로 변경할 것) (완료)~~
+> - ~~NAS의 SQL에 데이터 업로드 (완료)~~
 
 ## `추후 예정상황`
 > - SQL의 데이터 불러온 후, tkinter 설정에 바로 연동
@@ -40,7 +40,5 @@
 
 
 ## `Feedback`
-> - 홈페이지에서 회차 조회를 for 문을 이용하여 반복해서 조회할 때, `driver.find_element(By.XPATH, '//*[@id="dwrNoList"]').send_keys(i)` 를 사용하였는데,\
-해당 element가 str 타입이어서, send_keys가 제대로 작동하지 않았음.
-> - 이에 `from selenium.webdriver.support.ui import Select`의 `select_by_value(str(i))`를 이용하여 value를 차례대로 선택할 수 있었고, 데이터가 올바르게\
-들어가는 것을 확인하였음.
+> - 홈페이지에서 회차 조회를 for 문을 이용하여 반복해서 조회할 때, `driver.find_element(By.XPATH, '//*[@id="dwrNoList"]').send_keys(i)` 를 사용하였는데, 해당 element가 str 타입이어서, send_keys가 제대로 작동하지 않았음.
+> - 이에 `from selenium.webdriver.support.ui import Select`의 `select_by_value(str(i))`를 이용하여 value를 차례대로 선택할 수 있었고, 데이터가 올바르게 들어가는 것을 확인하였음.
