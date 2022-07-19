@@ -97,19 +97,19 @@ message.place(relx=0, y = 165, relwidth = 1, height = 50)
 # ================== 하단 frame ===================== #
 
 # button - 최근 10회 가장 많이 나온 번호 조회
-top_10_button = Button(text='최근 TOP 10',background='lightyellow', command=get_lot_num_10)          ### 커맨드 추가
+top_10_button = Button(text='최근 10 회',background='lightyellow', command=get_lot_num_10)          ### 커맨드 추가
 top_10_button.place(relx=0.01, y=220, relwidth=0.2, height=50)
 
 # button - 최근 25회 번호 조회
-top_25_button = Button(text='최근 TOP 25', command=get_lot_num_25)      # 커맨드 추가
+top_25_button = Button(text='최근 25 회', command=get_lot_num_25)      # 커맨드 추가
 top_25_button.place(relx=0.26, y = 220, relwidth=0.2, height=50)
 
 # button - 최근 50회 번호 조회
-top_50_button = Button(text='최근 TOP 50', command=get_lot_num_50)      # 커맨드 추가
+top_50_button = Button(text='최근 50 회', command=get_lot_num_50)      # 커맨드 추가
 top_50_button.place(relx = 0.51, y = 220, relwidth=0.2, height=50)
 
 # button - 전체 번호 조회
-all_num_button = Button(text='전체 번호 조회', command=get_lot_num_all)     # 커맨드 추가
+all_num_button = Button(text='전체 회차 조회', command=get_lot_num_all)     # 커맨드 추가
 all_num_button.place(relx=0.76, y = 220, relwidth=0.2, height=50)
 
 
@@ -118,16 +118,16 @@ print_nums_message = Message(text='최근 가장 많이 나온 숫자 (보너스
 print_nums_message.place(relx=0, y = 275, relwidth=1, height=60)
 
 # combobox_start - 조회 시작 칸
-combobox_start = Combobox(window, values=[i for i in range(1, 1001)])
+combobox_start = Combobox(window, values=[i for i in range(1, 1001)])       ## <======== range의 마지막번호를 최신회차로 변경해야 함
 combobox_start.place(relx=0.01, y = 340, relwidth=0.2, height=25, )
-combobox_start.set('시작')
-# a = combobox_start.get()          # 삭제
+combobox_start.set('1')
+start_num = combobox_start.get()          # 삭제 >> 보류
 
 # combobox_end - 조회 종료 칸
-combobox_end = Combobox(window, values=[i for i in range(1, 1001)])
+combobox_end = Combobox(window, values=[i for i in range(1, 1001)])         ## <========= range의 마지막번호를 최신회차로 변경해야 함
 combobox_end.place(relx=0.01, y = 370, relwidth=0.2, height=25, )
-combobox_end.set('종료')
-# b = combobox_end.get()            # 삭제
+combobox_end.set('2')                                                       ## <=========최신회차 정보 입력해야 함
+end_num = combobox_end.get()            # 삭제 >> 보류
 
 
 # search_button - combobox 조회버튼
