@@ -19,6 +19,7 @@
 > - tkinter 내의 함수, 알고리즘 정리하기
 > - SQL 데이터를 불러와 딥러닝 예측하기
 > - 사용설명서 작성하기
+> - SQL 접속 유저 및 접속 권한 
 
 ## `pip list`
 > - `from tkinter import *`
