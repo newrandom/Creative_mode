@@ -70,7 +70,7 @@ window.title('로또번호 조회기')
 window.resizable(0,0)
 
 # main_label
-main_label = Label(text='본 프로그램은 당첨을 확정해주는 프로그램이 아닙니다.', width = 490, justify='center', font=("Helvetica", 14, 'bold'))
+main_label = Label(text='본 프로그램은 당첨을 확정해주는 프로그램이 아닙니다.', width = 490, justify='center', font=("Helvetica", 10, 'bold'))
 main_label.place(relx=0.15, y = 5, relwidth=0.7, height=30)
 
 # title_label
@@ -97,7 +97,7 @@ message.place(relx=0, y = 165, relwidth = 1, height = 50)
 # ================== 하단 frame ===================== #
 
 # button - 최근 10회 가장 많이 나온 번호 조회
-top_10_button = Button(text='최근 10 회',background='lightyellow', command=get_lot_num_10)          ### 커맨드 추가
+top_10_button = Button(text='최근 10 회', command=get_lot_num_10)          ### 커맨드 추가
 top_10_button.place(relx=0.01, y=220, relwidth=0.2, height=50)
 
 # button - 최근 25회 번호 조회
